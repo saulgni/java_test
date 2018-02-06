@@ -1,9 +1,17 @@
 package java_test;
 
+//import java.util.Calendar;
 import java.util.Scanner;
 
 public class Calandar1 {
-	public static void main(String[] args) {
+	
+	private static final int[] MAX_DAYS =  {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS[month -1];
+	}
+	
+	public void printSampleCalandar() {
 		System.out.println(" 일  월   화   수  목   금   토");
 		System.out.println("--------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
@@ -12,13 +20,19 @@ public class Calandar1 {
 		System.out.println("22 23 24 25 26 27 28");
 		System.out.println("29 30 31");
 		
-		
+	}
+	
+	
+	public static void main(String[] args) {
+			
 		Scanner scanner = new Scanner(System.in);
+		Calandar1 cal = new Calandar1();
+		
 		System.out.println("달을 입력하세요");
 		int month = scanner.nextInt();
-		int[] maxDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		
-		System.out.printf("%d월은 %d일까지 있습니다. \n", month, maxDays[month - 1]);
+		System.out.printf("%d월은 %d일까지 있습니다. \n", month, cal.getMaxDaysOfMonth(month));
+		cal.printSampleCalandar();
 		scanner.close();
 		
 			
