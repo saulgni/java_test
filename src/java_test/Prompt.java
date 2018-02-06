@@ -13,12 +13,16 @@ public class Prompt {
 
 		
 		int month = 1;
+		int year = -1;
 		
 		while (true) {
-			
+			System.out.println("년도를 입력하세요");
+			System.out.print("YEAR> ");
+			year = scanner.nextInt();
 			System.out.println("달을 입력하세요");
-			System.out.print(PROMPT);
+			System.out.print("MONTH> ");
 			month = scanner.nextInt();
+			
 			
 			if(month == -1) {
 				break;
@@ -26,7 +30,7 @@ public class Prompt {
 			if(month > 12) {
 				continue;
 			}
-			cal.printCalandar(2018,month);	
+			cal.printCalandar(year,month);	
 		}
 	
 		System.out.println("The End !!.");
